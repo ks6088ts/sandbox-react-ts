@@ -21,6 +21,7 @@ module.exports = {
     rules: {
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+        'react/prop-types': ['off'],
     },
     settings: {
         react: {
