@@ -20,8 +20,32 @@ format: ## format codes
 	yarn fix
 
 .PHONY: build
-build: ## build applications
+build: ## build an app
 	yarn build
+
+.PHONY: start
+start: ## start an app
+	yarn start
 
 .PHONY: ci-test
 ci-test: install-deps lint test build ## run ci tests
+
+# ---
+# Amplify
+# ---
+
+.PHONY: install-deps-deployment
+install-deps-deployment: ## install dependencies for deployment
+	yarn global add @aws-amplify/cli
+
+.PHONY: amplify-configure
+amplify-configure: ## cofigure amplify
+	amplify configure
+
+.PHONY: amplify-init
+amplify-init: ## initialize amplify project
+	amplify init
+
+.PHONY: amplify-add-hosting
+amplify-add-hosting: ## add hosting
+	amplify add hosting
